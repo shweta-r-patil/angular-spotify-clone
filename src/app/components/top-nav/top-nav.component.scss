@@ -6,15 +6,17 @@
     top: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
     align-items: center;
     color: white;
 }
 .spotify__top-nav_focus_title {
-    flex-basis: 550px;
-    margin-left: -248px;
+    // flex-basis: 550px;
+    // margin-left: -248px;
     font-weight: bold;
     transition: color 0.5s ease;
+    margin-left: 10px;
+    color: white;
 
     &:hover {
     color: red;
@@ -23,10 +25,13 @@
 .spotify__top-nav_auth {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
     gap: 20px;
 }
+.spotify__top-nav_auth-sign-up{
+        margin-left: 800px;
+}
+
 .spotify__top-nav_auth-sign-up {
     background-color: white;
     color: black;

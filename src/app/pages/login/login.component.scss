@@ -1,0 +1,67 @@
+.spotify_login_container {
+    height: 641px;
+    background-color: #292927;
+}
+.spotify_login_container_spotify-icon {
+    width: 100%;
+    background-color: black;
+    padding: 32px 0px 32px 51px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.spotify_login_container_form {
+    height: 440px;
+    width: 550px;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 65px;
+    margin-left: 425px;
+}
+.spotify_login_title {
+    color: white;
+    font-weight: bold;
+    padding-left: 150px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+label {
+    color: white;
+    margin-left: 70px;
+}
+.spotify_login_user_input > input, .spotify_login_user_password > input {
+    width: 400px;
+    border: none;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+}
+.spotify_login_form_checkbox {
+    margin-left: 70px;
+    height: 20px;
+    label {
+        margin-left: 10px;
+    }
+}
+.spotify_login_button > button {
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: blue;
+    color: white;
+    border-radius: 40px;
+}
+.spotify_login_forgotten_password {
+    color: white;
+    margin-left: 160px;
+    margin-right: 217px;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+        color: blue;
+    }
+}

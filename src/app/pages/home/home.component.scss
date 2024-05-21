@@ -1,5 +1,7 @@
 .spotify__home-container {
     overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
 }
 .spotify__home-container__side-bar {
     display: flex;
@@ -8,12 +10,17 @@
     align-items: center;
     background-color: black;
     height: 100vh;
-    
+    width: 300px;
 }
 .spotify__home-container__playlist-container {
-    background-color: #5e5e57;
+    background-color: #292927;
     // background-color: black;
     height: 100vh;
+    width: 100%;
+}
+.spotify__home-container__side-bar-image {
+    padding-left: 0px;
+    padding-right: 60px;
 }
 .spotify__home-container__side-bar-item {
     color: white;
@@ -25,4 +32,10 @@
 .spotify__home-container__side-bar-item > a:hover {
     color: red;
     cursor: pointer;
+}
+.right-side-conatiner {
+    margin-top: 72px;
+    height: 600px;
+    overflow-y: scroll;
+    padding-bottom: 40px;
 }

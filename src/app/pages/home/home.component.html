@@ -1,7 +1,6 @@
-
-<div class="spotify__home-container row">
-    <div class="spotify__home-container__side-bar col-2">
-        <div>
+<div class="spotify__home-container">
+    <div class="spotify__home-container__side-bar">
+        <div class="spotify__home-container__side-bar-image">
             <img width="150" class="m-3" src="../../../assets/spotify-image.png" alt="Not found">
         </div>
         <div class="spotify__home-container__side-bar-item">
@@ -17,10 +16,13 @@
             <a>Create Playlist</a>
         </div>
     </div>
-    <div class="spotify__home-container__playlist-container col-10">
+    <div class="spotify__home-container__playlist-container">
+        <div>
             <app-top-nav></app-top-nav>
-            <div style="padding-top: 20px;" class="mt-5 container">
-                <app-song-card title="Peaceful Piano" description="Relax and indelgue with beautiful piano"></app-song-card>
-            </div>
+        </div>
+        <div class="right-side-conatiner">
+            <app-song-card title="Peaceful Piano" description="Relax and indelgue with beautiful piano"></app-song-card>
+        </div>
+
     </div>
 </div>

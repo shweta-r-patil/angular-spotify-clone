@@ -88,6 +88,66 @@ export class SongCardComponent implements OnInit {
         'title': 'Song Title 2',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 1',
+        'description': 'Description of Song 1',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 2',
+        'description': 'Description of Song 2',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 1',
+        'description': 'Description of Song 1',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 2',
+        'description': 'Description of Song 2',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 1',
+        'description': 'Description of Song 1',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 2',
+        'description': 'Description of Song 2',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 1',
+        'description': 'Description of Song 1',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 2',
+        'description': 'Description of Song 2',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 1',
+        'description': 'Description of Song 1',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 2',
+        'description': 'Description of Song 2',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 1',
+        'description': 'Description of Song 1',
+        'image': "../../../assets/Music-Icon.png"
+      },
+      {
+        'title': 'Song Title 2',
+        'description': 'Description of Song 2',
+        'image': "../../../assets/Music-Icon.png"
       }
     ]
   }
