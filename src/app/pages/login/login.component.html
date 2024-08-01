@@ -4,21 +4,23 @@
     </div>
     <div class="spotify_login_container_form">
         <h3 class="spotify_login_title">Log in to Spotify</h3>
+        <form [formGroup]="userloginForm" (ngSubmit)="onSubmit()">
         <div class="spotify_login_user_input">
             <label for="us">Email or Username</label>
-            <input type="text" placeholder="Username or email" id="us">
+            <input type="email" placeholder="Username or email" id="us" formControlName="userName">
         </div>
         <div class="spotify_login_user_password">
             <label for="pass">Password</label>
-            <input type="password" placeholder="Password" id="pass">
+            <input type="password" placeholder="Password" id="pass" formControlName="password">
         </div>
         <div class="spotify_login_form_checkbox">
             <input type="checkbox">
             <label>Remember me</label>
         </div>
         <div class="spotify_login_button">
-            <button>Log in</button>
+            <button type="submit" [disabled]="!userloginForm.valid">Log in</button>
         </div>
         <div class="spotify_login_forgotten_password"><a>Forgot your password ?</a></div>
+    </form>
     </div>
 </div>
