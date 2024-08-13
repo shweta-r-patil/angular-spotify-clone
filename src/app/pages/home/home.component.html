@@ -18,11 +18,10 @@
     </div>
     <div class="spotify__home-container__playlist-container">
         <div>
-            <app-top-nav></app-top-nav>
+            <app-top-nav (emitsearchedItem)="getSearchedSong($event)"></app-top-nav>
         </div>
         <div class="right-side-conatiner">
-            <app-song-card title="Peaceful Piano" description="Relax and indelgue with beautiful piano"></app-song-card>
+            <app-song-card [searchTerm]="searchTerm"></app-song-card>
         </div>
-
     </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="spotify__song-card-container">
-    <div class="spotify__song-card" *ngFor="let song of songCategory">
+    <div class="spotify__song-card" *ngFor="let song of filteredSongs">
         <img [src]="song.image" alt="thumbnail" class="spotify__song-card-image">
         <div class="spotify__song-card_title">{{song.title}}</div>
         <div class="spotify__song-card_description">{{song.description}}</div>

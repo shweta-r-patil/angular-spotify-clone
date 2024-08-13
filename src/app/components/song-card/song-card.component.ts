@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // import { BrowserModule } from '@angular/platform-browser';
 
-type SongList = {
+type Song = {
   title: string,
   description: string,
   image: string
@@ -16,19 +16,17 @@ type SongList = {
   styleUrl: './song-card.component.scss'
 })
 export class SongCardComponent implements OnInit {
-  // @Input() public playlistThumbnail!: string;
-  // @Input() public image!: string;
-  // @Input() public title!: string;
-  // @Input() public description!: string;
-  songCategory: SongList[] = [];
-  // songC: any;
-
+  allSongs: Song[] = [];
+  @Input() searchTerm: string = '';
+  filteredSongs: Song[] = [];
   constructor() { }
+  
   ngOnInit() {
     this.getSongList();
+    this.filteredSongs = this.allSongs;
   }
   getSongList() {
-    this.songCategory = [
+    this.allSongs = [
       {
         'title': 'Song Title 1',
         'description': 'Description of Song 1',
@@ -151,4 +149,20 @@ export class SongCardComponent implements OnInit {
       }
     ]
   }
+
+  ngOnChanges() {
+    this.filterSongs();
+  }
+
+  filterSongs() {
+    if (!this.searchTerm) {
+      this.filteredSongs = this.allSongs;
+    } else {
+      if (this.searchTerm && this.searchTerm.length >= 1) {
+        this.filteredSongs = this.allSongs.filter((song) => song.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+          song.description.toLowerCase().includes(this.searchTerm.toLowerCase()));
+      }
+    }
+  }
+
 }

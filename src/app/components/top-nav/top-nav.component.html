@@ -1,5 +1,6 @@
 <div class="spotify__top-nav">
     <div class="spotify__top-nav_focus_title">Focus</div>
+    <input type="search" [(ngModel)]="searchedItem" (ngModelChange)="onSearchChange($event)">
     <div class="spotify__top-nav_auth">
         <div class="spotify__top-nav_auth-sign-up">Sign Up</div>
         <div class="spotify__top-nav_auth-longIn" (click)="navigateToLoginPage()">Log In</div>
