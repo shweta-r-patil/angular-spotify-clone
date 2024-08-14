@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 type Song = {
   title: string,
   description: string,
-  image: string
+  image: string 
 }
 
 @Component({
@@ -28,122 +28,122 @@ export class SongCardComponent implements OnInit {
   getSongList() {
     this.allSongs = [
       {
-        'title': 'Song Title 1',
+        "title": "Death Bed",
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Morning Mr Magpie',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Little by Little',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Feral',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Lotus Flower',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Lotus Flower',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Give Up the Ghost',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Separator',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Airbag',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Paranoid Android',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Subterranean Homesick Alien',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Exit Music (For a Film)',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Let Down',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Karma Police',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Fitter Happier',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Electioneering',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Climbing Up the Wall',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'No Surprises',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Lucky',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Mysterons',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'Sour Times',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Strangers',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 1',
+        'title': 'It Could Be Sweet',
         'description': 'Description of Song 1',
         'image': "../../../assets/Music-Icon.png"
       },
       {
-        'title': 'Song Title 2',
+        'title': 'Wandering Star',
         'description': 'Description of Song 2',
         'image': "../../../assets/Music-Icon.png"
       }
