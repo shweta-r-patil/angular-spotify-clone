@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
 
 type Song = {
   title: string,
@@ -11,7 +11,7 @@ type Song = {
 @Component({
   selector: 'app-song-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './song-card.component.html',
   styleUrl: './song-card.component.scss'
 })
@@ -19,6 +19,7 @@ export class SongCardComponent implements OnInit {
   allSongs: Song[] = [];
   @Input() searchTerm: string = '';
   filteredSongs: Song[] = [];
+  audio: HTMLAudioElement | undefined;
   constructor() { }
   
   ngOnInit() {
@@ -163,6 +164,14 @@ export class SongCardComponent implements OnInit {
           song.description.toLowerCase().includes(this.searchTerm.toLowerCase()));
       }
     }
+  }
+  playSong() {
+    this.audio = new Audio("https://cdn.pixabay.com/audio/2023/10/05/audio_8544d22db8.mp3");
+    this.audio.play();
+  }
+
+  pauseSong() {
+    this.audio?.pause();
   }
 
 }
