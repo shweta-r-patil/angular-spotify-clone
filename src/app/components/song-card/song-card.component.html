@@ -1,9 +1,9 @@
 <div class="spotify__song-card-container">
-    <div class="spotify__song-card" *ngFor="let song of filteredSongs">
+    <div class="spotify__song-card" *ngFor="let song of filteredSongs; let i= index">
         <img [src]="song.image" alt="thumbnail" class="spotify__song-card-image">
         <div class="spotify__song-card_title">{{song.title}}</div>
         <div class="spotify__song-card_description">{{song.description}}</div>
-        <mat-icon class="icon" *ngIf="!isPlaying" (click)="playSong()">play_circle_filled</mat-icon>
-        <mat-icon class="icon" *ngIf="isPlaying" (click)="pauseSong()">pause_circle_filled</mat-icon>
+        <mat-icon class="icon" *ngIf="currentPlayingIndex !== i" (click)="playSong(song, i)">play_circle_filled</mat-icon>
+        <mat-icon class="icon" *ngIf="currentPlayingIndex === i" (click)="pauseSong()">pause_circle_filled</mat-icon>
     </div>
 </div>
