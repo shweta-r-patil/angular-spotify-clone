@@ -20,6 +20,7 @@ export class SongCardComponent implements OnInit {
   @Input() searchTerm: string = '';
   filteredSongs: Song[] = [];
   audio: HTMLAudioElement | undefined;
+  isPlaying: boolean = false;
   constructor() { }
   
   ngOnInit() {
@@ -168,10 +169,12 @@ export class SongCardComponent implements OnInit {
   playSong() {
     this.audio = new Audio("https://cdn.pixabay.com/audio/2023/10/05/audio_8544d22db8.mp3");
     this.audio.play();
+    this.isPlaying = true;
   }
 
   pauseSong() {
     this.audio?.pause();
+    this.isPlaying = false;
   }
 
 }
