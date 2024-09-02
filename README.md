@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## ToDo
+
+1. Save user name from login page to local storage
+2. Display user name in home page if it is available in local storage 
+3. Correct placement of play button similar to spotify
+4. Remove description
+5. Correct images by using from unsplash
+6. Correct names of component and remove unsed components
+7. create a music player component
+8. check on different size
