@@ -1,27 +1,23 @@
-<div class="spotify__home-container">
-    <div class="spotify__home-container__side-bar">
-        <div class="spotify__home-container__side-bar-image">
-            <img width="150" class="m-3" src="../../../assets/spotify-image.png" alt="Not found">
-        </div>
-        <div class="spotify__home-container__side-bar-item">
-            <a>Home</a>
-        </div>
-        <div class="spotify__home-container__side-bar-item">
-            <a>Search</a>
-        </div>
-        <div class="spotify__home-container__side-bar-item">
-            <a>Your Library</a>
-        </div>
-        <div class="spotify__home-container__side-bar-item">
-            <a>Create Playlist</a>
-        </div>
+<div class="bg-black h-screen p-2 flex flex-col">
+  <!-- Top Navigation -->
+  <app-top-nav></app-top-nav>
+
+  <!-- Main Content Area -->
+  <div class="flex flex-col grow overflow-hidden">
+    <div class="grid grid-cols-12 gap-2 grow overflow-hidden">
+      <!-- Left Sidebar: Recents List -->
+      <div class="col-span-3 flex flex-col overflow-hidden">
+        <!-- Add full height control to this component -->
+        <app-recents-left-list class="grow h-full"></app-recents-left-list>
+      </div>
+
+      <!-- Right Sidebar (non-scrolling) -->
+      <div class="col-span-9">right side bar</div>
     </div>
-    <div class="spotify__home-container__playlist-container">
-        <div>
-            <app-top-nav (emitsearchedItem)="getSearchedSong($event)"></app-top-nav>
-        </div>
-        <div class="right-side-conatiner">
-            <app-song-card [searchTerm]="searchTerm"></app-song-card>
-        </div>
+
+    <!-- Player at the Bottom -->
+    <div class=" shrink-0">
+      <app-song-player />
     </div>
+  </div>
 </div>
