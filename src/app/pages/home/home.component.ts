@@ -5,11 +5,13 @@ import { SongCardComponent } from '../../components/song-card/song-card.componen
 import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import { SongPlayerComponent } from "../../components/song-player-bottom/song-player-bottom.component";
+import { SongsPanelRightComponent } from '../../components/songs-panel-right/songs-panel-right.component';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TopNavComponent, SongCardComponent, CommonModule, MatIconModule, RecentsLeftListComponent, SongPlayerComponent],
+  imports: [TopNavComponent, SongCardComponent, CommonModule, MatIconModule, RecentsLeftListComponent, SongPlayerComponent, SongsPanelRightComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

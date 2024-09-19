@@ -11,12 +11,14 @@
         <app-recents-left-list class="grow h-full"></app-recents-left-list>
       </div>
 
-      <!-- Right Sidebar (non-scrolling) -->
-      <div class="col-span-9">right side bar</div>
+      <!-- Right Sidebar -->
+      <div class="col-span-9 flex flex-col overflow-hidden">
+        <app-songs-panel-right class="grow h-full" />
+      </div>
     </div>
 
     <!-- Player at the Bottom -->
-    <div class=" shrink-0">
+    <div class="shrink-0">
       <app-song-player />
     </div>
   </div>

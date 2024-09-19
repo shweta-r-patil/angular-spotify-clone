@@ -1,0 +1,99 @@
+<div class="bg-background-tinted-press rounded-2xl p-3 flex flex-col h-full">
+  <!-- tabs  -->
+  <div class="space-x-2">
+    <button
+      class="bg-background-highlight text-white px-3 py-1 rounded-full hover:bg-background-elevated-highlight"
+    >
+      All
+    </button>
+    <button
+      class="bg-background-highlight text-white px-3 py-1 rounded-full hover:bg-background-elevated-highlight"
+    >
+      Music
+    </button>
+    <button
+      class="bg-background-highlight text-white px-3 py-1 rounded-full hover:bg-background-elevated-highlight"
+    >
+      Podcast
+    </button>
+  </div>
+
+  <!-- Song list -->
+  <div class="mt-5">
+    <span class="text-white font-bold text-balance text-2xl"
+      >Made for shweta.patil</span
+    >
+
+    <!-- song card -->
+    <div class="overflow-auto flex mt-3">
+      <ng-container *ngFor="let song of songs">
+        <div
+          class="flex flex-col min-w-36 group hover:bg-background-elevated-highlight p-[0.6rem] gap-2 rounded-lg transition-all duration-100"
+        >
+          <div class="aspect-square relative flex justify-center items-center">
+            <img
+              [src]="song.image"
+              alt="{{ song.title }}"
+              class="size-[9rem] rounded-lg"
+            />
+
+            <div
+              class="absolute hidden group-hover:block transition-opacity duration-300 right-3 bottom-2 shadow-lg"
+            >
+              <div class="bg-black rounded">
+                <mat-icon
+                  class="rounded-full scale-[2.2] hover:scale-[2.5] text-green-500 transition-transform duration-300 ease-in-out"
+                  >play_circle_filled</mat-icon
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="text-white">
+            <h3 class="font-medium text-gray-300">{{ song.title }}</h3>
+            <p class="text-sm text-gray-300">Playlist • {{ song.artist }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <span class="text-white font-bold text-balance text-2xl"
+      >Your Top Mixes</span
+    >
+
+    <!-- song card -->
+    <div class="overflow-auto flex mt-3">
+      <ng-container *ngFor="let song of songs">
+        <div
+          class="flex flex-col min-w-36 group hover:bg-background-elevated-highlight p-[0.6rem] gap-2 rounded-lg transition-all duration-100"
+        >
+          <div class="aspect-square relative flex justify-center items-center">
+            <img
+              [src]="song.image"
+              alt="{{ song.title }}"
+              class="size-[9rem] rounded-lg"
+            />
+
+            <div
+              class="absolute hidden group-hover:block transition-opacity duration-300 right-3 bottom-2 shadow-lg"
+            >
+              <div class="bg-black rounded">
+                <mat-icon
+                  class="rounded-full scale-[2.2] hover:scale-[2.5] text-green-500 transition-transform duration-300 ease-in-out"
+                  >play_circle_filled</mat-icon
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="text-white">
+            <h3 class="font-medium text-gray-300">{{ song.title }}</h3>
+            <p class="text-sm text-gray-300">Playlist • {{ song.artist }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
