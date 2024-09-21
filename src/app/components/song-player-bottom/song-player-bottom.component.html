@@ -1,0 +1,42 @@
+<div class="flex items-center justify-between p-4 bg-black text-white">
+    <!-- Left Section: Song Info -->
+    <div class="flex items-center">
+      <img [src]="currentSong.image" alt="{{ currentSong.title }}" class="w-12 h-12 rounded-lg mr-4">
+      <div>
+        <h4 class="font-bold">{{ currentSong.title }}</h4>
+        <p class="text-sm text-gray-400">{{ currentSong.artist }}</p>
+      </div>
+    </div>
+  
+    <!-- Center Section: Playback Controls -->
+    <div class="flex items-center space-x-4">
+      <mat-icon class="text-white">shuffle</mat-icon>
+      <mat-icon class="text-white" (click)="previousSong()">skip_previous</mat-icon>
+      <mat-icon class="text-white play-pause-icon" (click)="togglePlayPause()">
+        {{ isPlaying ? 'pause_circle_filled' : 'play_circle_filled' }}
+      </mat-icon>
+      <mat-icon class="text-white" (click)="nextSong()">skip_next</mat-icon>
+      <mat-icon class="text-white">repeat</mat-icon>
+    </div>
+  
+    <!-- Right Section: Progress Bar and Volume -->
+    <div class="flex items-center space-x-2 w-1/2">
+      <span>{{ formatTime(currentTime) }}</span>
+      <input type="range" min="0" [max]="duration" [(ngModel)]="currentTime" (input)="seekAudio($event)" class="w-full">
+      <span>{{ formatTime(duration) }}</span>
+    </div>
+  
+    <!-- Volume and Additional Controls -->
+    <div class="flex items-center space-x-2">
+      <mat-icon class="text-white">volume_up</mat-icon>
+      <input type="range" min="0" max="1" step="0.01" [(ngModel)]="volume" (input)="setVolume($event)" class="w-16">
+      <mat-icon class="text-white">fullscreen</mat-icon>
+    </div>
+  
+    <!-- Audio Element (Hidden) -->
+    <audio #audioPlayer (timeupdate)="updateProgress()" (loadedmetadata)="setDuration()">
+      <source [src]="currentSong.audioUrl" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
