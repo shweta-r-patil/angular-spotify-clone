@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { songs } from '../../../songs';
+import { ISong, songs } from '../../../songs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,27 +8,35 @@ import { songs } from '../../../songs';
 export class SongPlayerService {
   private songs = songs;
   private currentSongIndex = 0;
+  currentSong = songs[0]
+  isPlaying = false
+  songSubject = new BehaviorSubject<ISong>(songs[0])
 
-  // TODO: Fix type
-  private currentSongSubject = new BehaviorSubject<any>(songs[0]);
-  currentSong$ = this.currentSongSubject.asObservable();
 
-  playSong(song: any) {
-    console.log(song);
+  playSong(song: ISong) {
+    console.log("Inside song service: ", song);
     const index = this.songs.findIndex(s => s.id === song.id);
     if (index !== -1) {
+      console.log("Setting new song")
       this.currentSongIndex = index;
-      this.currentSongSubject.next(song);
+      this.currentSong = this.songs[this.currentSongIndex]
+      this.songSubject.next(songs[this.currentSongIndex])
+      this.isPlaying = true
     }
   }
 
   playPreviousSong() {
+    console.log("Setting previous song")
     this.currentSongIndex = (this.currentSongIndex - 1 + this.songs.length) % this.songs.length;
-    this.currentSongSubject.next(this.songs[this.currentSongIndex]);
+    this.currentSong = this.songs[this.currentSongIndex]
+    this.songSubject.next(songs[this.currentSongIndex])
   }
 
   playNextSong() {
+    console.log("Setting next song")
     this.currentSongIndex = (this.currentSongIndex + 1) % this.songs.length;
-    this.currentSongSubject.next(this.songs[this.currentSongIndex]);
+    this.currentSong = this.songs[this.currentSongIndex]
+    this.songSubject.next(songs[this.currentSongIndex])
+
   }
 }

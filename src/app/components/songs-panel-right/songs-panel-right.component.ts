@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { songs } from '../../../songs';
+import { ISong, songs } from '../../../songs';
 import { CommonModule } from '@angular/common'
 import { MatIconModule } from '@angular/material/icon';
 import { SongPlayerService } from '../../service/songplayer/song-player-service.service'; // Add this import
@@ -10,7 +10,6 @@ import { SongPlayerService } from '../../service/songplayer/song-player-service.
   imports: [MatIconModule, CommonModule],
   templateUrl: './songs-panel-right.component.html',
   styleUrl: './songs-panel-right.component.scss',
-  providers: [SongPlayerService] 
 })
 export class SongsPanelRightComponent {
   songs = songs;
@@ -18,8 +17,8 @@ export class SongsPanelRightComponent {
 
   constructor(private songPlayerService: SongPlayerService) {} 
 
-  playSong(song: any) { 
-    console.log("playing song", song);
+  playSong(song: ISong) { 
+    console.log("Inside song component", song);
     this.songPlayerService.playSong(song);
   }
 }
