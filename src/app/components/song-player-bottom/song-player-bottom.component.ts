@@ -1,35 +1,48 @@
-import { Component, ViewChild, ElementRef} from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { songs } from '../../../songs';
+import { ISong, songs } from '../../../songs';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { SongPlayerService } from '../../service/songplayer/song-player-service.service';
 
 @Component({
   selector: 'app-song-player',
-  standalone: true, 
+  standalone: true,
   templateUrl: './song-player-bottom.component.html',
   styleUrls: ['./song-player-bottom.component.scss'],
   imports: [MatIconModule, CommonModule, FormsModule],
 })
-export class SongPlayerComponent {
+export class SongPlayerComponent implements OnInit {
   @ViewChild('audioPlayer') audioPlayerRef!: ElementRef<HTMLAudioElement>;
 
-  songs = songs;
-  currentSongIndex = 0;
-  currentSong = this.songs[this.currentSongIndex];
-  isPlaying = false;
   currentTime = 0;
   duration = 0;
   volume = 1;
+  
+
+  constructor(public songPlayerService: SongPlayerService) {}
+  ngOnInit(): void {
+    this.songPlayerService.songSubject.subscribe((s) => {
+      console.log("subscription called: ", s)
+      this.loadSong()
+    })
+  }
 
   togglePlayPause() {
     const audio = this.audioPlayerRef.nativeElement;
-    if (this.isPlaying) {
+    if (this.songPlayerService.isPlaying) {
       audio.pause();
     } else {
       audio.play();
     }
-    this.isPlaying = !this.isPlaying;
+    this.songPlayerService.isPlaying = !this.songPlayerService.isPlaying;
   }
 
   updateProgress() {
@@ -55,19 +68,18 @@ export class SongPlayerComponent {
   }
 
   previousSong() {
-    this.currentSongIndex = (this.currentSongIndex - 1 + this.songs.length) % this.songs.length;
-    this.loadSong();
+    this.songPlayerService.playPreviousSong();
   }
 
   nextSong() {
-    this.currentSongIndex = (this.currentSongIndex + 1) % this.songs.length;
-    this.loadSong();
+    this.songPlayerService.playNextSong();
   }
 
   loadSong() {
-    this.currentSong = this.songs[this.currentSongIndex];
-    this.audioPlayerRef.nativeElement.load();
-    this.isPlaying = false;
-    this.togglePlayPause(); // Automatically start playing the next song
+    if (this.audioPlayerRef) {
+      this.audioPlayerRef.nativeElement.load();
+      this.songPlayerService.isPlaying = false;
+      this.togglePlayPause(); // Automatically start playing the new song
+    }
   }
 }

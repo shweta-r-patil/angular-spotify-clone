@@ -40,7 +40,11 @@
             <div
               class="absolute hidden group-hover:block transition-opacity duration-300 right-3 bottom-2 shadow-lg"
             >
-              <div class="bg-black rounded">
+              <div
+                (click)="playSong(song)"
+                type="button"
+                class="bg-black rounded"
+              >
                 <mat-icon
                   class="rounded-full scale-[2.2] hover:scale-[2.5] text-green-500 transition-transform duration-300 ease-in-out"
                   >play_circle_filled</mat-icon
@@ -67,6 +71,7 @@
     <div class="overflow-auto flex mt-3">
       <ng-container *ngFor="let song of songs">
         <div
+         
           class="flex flex-col min-w-36 group hover:bg-background-elevated-highlight p-[0.6rem] gap-2 rounded-lg transition-all duration-100"
         >
           <div class="aspect-square relative flex justify-center items-center">
@@ -77,6 +82,7 @@
             />
 
             <div
+            (click)="playSong(song)"
               class="absolute hidden group-hover:block transition-opacity duration-300 right-3 bottom-2 shadow-lg"
             >
               <div class="bg-black rounded">
